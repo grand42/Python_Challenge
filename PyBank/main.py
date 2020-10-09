@@ -9,23 +9,6 @@ csvpath = os.path.join("Resources","budget_data.csv")
 date = []
 Profits_Losses = []
 
-# Define Function
-# def profits_and_losses(profits):
-    
-    #average = sum(profits)/len(profits)
-
-    #total =sum(profits)
-    
-    #max_profit = max(profits)
-
-    #max_loss = min(profits)
-
-    #print(f"(Total: ${total})")
-    #print(f"(Average Change: ${average})")
-
-
-
-
 # Open CSV
 
 with open(csvpath) as csvfile:
@@ -44,4 +27,12 @@ total = sum(Profits_Losses)
 
 #Calculate Average Change
 average = (Profits_Losses[(length-1)] - Profits_Losses[0])/length
+
+# Find Max Profit
+
+Max = max(Profits_Losses)
+
+# Find Max Loss
+
+Min = min(Profits_Losses)
  
