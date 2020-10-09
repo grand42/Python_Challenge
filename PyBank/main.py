@@ -8,6 +8,7 @@ csvpath = os.path.join("Resources","budget_data.csv")
 # Define Lists
 Date = []
 Profits_Losses = []
+Changes=[]
 
 # Open CSV
 
@@ -18,27 +19,32 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         Date.append(row[0])
         Profits_Losses.append(int(row[1]))
-
 #calculate total months
 length = len(Profits_Losses)
 
 # Calculate Total Profits
 total = sum(Profits_Losses)
 
+
+# Find Changes
+for i in range(1,length):
+    x=Profits_Losses[i]-Profits_Losses[i-1]
+    Changes.append(x)
+
 #Calculate Average Change
-average = (Profits_Losses[(length-1)] - Profits_Losses[0])/length
+average = sum(Changes)/len(Changes)
 
 # Find Max Profit
-Max = max(Profits_Losses)
+Max = max(Changes)
 
 # Find Max Loss
-Min = min(Profits_Losses)
+Min = min(Changes)
  
 # Find Date with Max Profit
-date_of_max = Date[Profits_Losses.index(Max)]
+date_of_max = Date[Changes.index(Max)+1]
 
 # Find Date with Max Loss
-date_of_min = Date[Profits_Losses.index(Min)]
+date_of_min = Date[Changes.index(Min)+1]
 
 # Print Results
 
