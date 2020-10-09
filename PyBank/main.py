@@ -36,6 +36,12 @@ with open(csvpath) as csvfile:
         date.append(row[0])
         Profits_Losses.append(int(row[1]))
 
-average = sum(Profits_Losses)/len(Profits_Losses) 
-print(average)
+#calculate total months
+length = len(Profits_Losses)
+
+# Calculate Total Profits
+total = sum(Profits_Losses)
+
+#Calculate Average Change
+average = (Profits_Losses[(length-1)] - Profits_Losses[0])/length
  
