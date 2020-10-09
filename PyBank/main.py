@@ -19,6 +19,7 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         Date.append(row[0])
         Profits_Losses.append(int(row[1]))
+
 #calculate total months
 length = len(Profits_Losses)
 
@@ -31,8 +32,10 @@ for i in range(1,length):
     x=Profits_Losses[i]-Profits_Losses[i-1]
     Changes.append(x)
 
-#Calculate Average Change
+#Calculate Average Change and round to two decimals
+average = 0.00
 average = sum(Changes)/len(Changes)
+average = str(round(average, 2))
 
 # Find Max Profit
 Max = max(Changes)
@@ -52,6 +55,6 @@ print("Financial Analysis")
 print("----------------------")
 print(f"Total Months: {length}")
 print(f"Total: ${total}")
-print(f"Average Change: ${average}")
+print("Average Change: $"+ average)
 print(f"Greatest Increase in Profits: {date_of_max} (${Max})")
 print(f"Greatest Decrease in Profits: {date_of_min} (${Min})")
