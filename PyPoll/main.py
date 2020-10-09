@@ -30,4 +30,12 @@ for vote in Candidate:
     if vote not in Candidate_List:
         Candidate_List.append(vote)
 
-print(Candidate_List)
+def vote_percent(candidate_vote):
+    x = Candidate.count(candidate_vote)
+    Total = len(Voter_ID)
+    percent = (x/Total) * 100
+    print(candidate_vote + ": " + str(percent) + "% (" + str(x) + ")")
+
+
+for candidate in Candidate_List:
+    vote_percent(candidate)
