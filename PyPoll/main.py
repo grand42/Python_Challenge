@@ -3,7 +3,7 @@ import os
 import csv
 
 # Set Path
-csvpath = os.path.join("Resources","budget_data.csv")
+csvpath = os.path.join("Resources","election_data.csv")
 
 # Define Lists
 Voter_ID = []
@@ -21,3 +21,6 @@ with open(csvpath) as csvfile:
         County.append(row[1])
         Candidate.append(row[2])
 
+# Find Total Votes
+total = len(Voter_ID)
+print(total)
