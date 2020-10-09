@@ -28,8 +28,13 @@ print("--------------------")
 # Find Total Votes
 total = len(Voter_ID)
 print(f"Total Votes: {total}")
-
 print("--------------------")
+
+with open('Analysis/Voting_Results.txt', 'w') as f:
+    print("Election Results", file=f)
+    print("--------------------", file=f)
+    print(f"Total Votes: {total}", file=f) 
+    print("--------------------", file=f) 
 
 # Find unique candides
 Candidate_List = []
@@ -46,6 +51,9 @@ def vote_percent(candidate_vote):
     percent = (x/Total) * 100
     percent = str(round(percent, 3))
     print(candidate_vote + ": " + percent + "% (" + str(x) + ")")
+    # Save to file
+    with open('Analysis/Voting_Results.txt', 'a') as f:
+        print(candidate_vote + ": " + percent + "% (" + str(x) + ")", file=f)
 
 # Create list for vote counts to find winner
 winner = []
@@ -62,3 +70,8 @@ winner_index = winner.index(max(winner))
 print("--------------------")
 print(f"Winner: {Candidate_List[winner_index]}")
 print("--------------------")
+# Save to file
+with open('Analysis/Voting_Results.txt', 'a') as f:
+    print("--------------------", file = f)
+    print(f"Winner: {Candidate_List[winner_index]}", file = f)
+    print("--------------------", file=f)
