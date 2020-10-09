@@ -49,12 +49,21 @@ date_of_max = Date[Changes.index(Max)+1]
 # Find Date with Max Loss
 date_of_min = Date[Changes.index(Min)+1]
 
-# Print Results
+# Print Results to file
+with open("Analysis/Bank_Analysis.txt", "w") as f:
+    print("Financial Analysis", file=f) 
+    print("----------------------", file=f)
+    print(f"Total Months: {length}", file=f)
+    print(f"Total: ${total}",file=f)
+    print("Average Change: $"+ average,file=f)
+    print(f"Greatest Increase in Profits: {date_of_max} (${Max})",file=f)
+    print(f"Greatest Decrease in Profits: {date_of_min} (${Min})",file=f) 
 
-print("Financial Analysis")
+# Print Results to terminal
+print("Financial Analysis") 
 print("----------------------")
 print(f"Total Months: {length}")
 print(f"Total: ${total}")
 print("Average Change: $"+ average)
 print(f"Greatest Increase in Profits: {date_of_max} (${Max})")
-print(f"Greatest Decrease in Profits: {date_of_min} (${Min})")
+print(f"Greatest Decrease in Profits: {date_of_min} (${Min})") 
