@@ -23,4 +23,11 @@ with open(csvpath) as csvfile:
 
 # Find Total Votes
 total = len(Voter_ID)
-print(total)
+
+# Find unique candides
+Candidate_List = []
+for vote in Candidate:
+    if vote not in Candidate_List:
+        Candidate_List.append(vote)
+
+print(Candidate_List)
