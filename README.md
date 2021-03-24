@@ -65,8 +65,6 @@ PyBank analysed the financial records of a company.  The financial data was cont
 ### Final Output
 [PyBank_Output](PyBank/Analysis/Bank_Analysis.txt)
 
-Financial Analysis
-----------------------
 Total Months: 86
 Total: $38382578
 Average Change: $-2315.12
@@ -100,7 +98,8 @@ The second project, PyPoll, analysed polling data for a state election.  The pol
     	  for row in csvreader:
              Voter_ID.append(row[0])
              County.append(row[1])
-             Candidate.append(row[2])
+             Candidate.append(row[2])[Bank_Analysis.txt](https://github.com/grand42/Python_Challenge/files/6195141/Bank_Analysis.txt)
+
 
 ### Analysis
 
@@ -144,14 +143,14 @@ The second project, PyPoll, analysed polling data for a state election.  The pol
 ### Final Output
 [Poll_Analysis](PyPoll/Analysis/Voting_Results.txt)
 
-Election Results
---------------------
+Election Results:
+
 Total Votes: 3521001
---------------------
+
 Khan: 63.0% (2218231)
 Correy: 20.0% (704200)
 Li: 14.0% (492940)
 O'Tooley: 3.0% (105630)
---------------------
+
 Winner: Khan
---------------------
+
