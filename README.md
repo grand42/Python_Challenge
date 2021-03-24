@@ -62,6 +62,8 @@ PyBank analysed the financial records of a company.  The financial data was cont
     	     print(f"Greatest Decrease in Profits: {date_of_min} (${Min})",file=f) 
 
 
+### Final Output
+[PyBank_Output](PyBank/Analysis/Bank_Analysis.txt)
 
 ## PyPoll
 
@@ -75,20 +77,21 @@ The second project, PyPoll, analysed polling data for a state election.  The pol
 
 * Define Lists
 
-	Voter_ID = []
-	County = []
-	Candidate=[]
+	  Voter_ID = []
+	  County = []
+	  Candidate=[]
 
 * Open CSV
-	
-	with open(csvpath) as csvfile:
-    	     csvreader = csv.reader(csvfile, delimiter=",")
+
+
+	  with open(csvpath) as csvfile:
+  	     csvreader = csv.reader(csvfile, delimiter=",")
              header=next(csvreader)
 
-    	     for row in csvreader:
-        	Voter_ID.append(row[0])
-        	County.append(row[1])
-        	Candidate.append(row[2])
+    	  for row in csvreader:
+             Voter_ID.append(row[0])
+             County.append(row[1])
+             Candidate.append(row[2])
 
 ### Analysis
 
@@ -115,11 +118,11 @@ The second project, PyPoll, analysed polling data for a state election.  The pol
 
 * Create list for vote counts to find winner
 	 
-	winner = []
+	  winner = []
 	     
 * Loop through list to find the winner
 
-	for candidate in Candidate_List:
+	  for candidate in Candidate_List:
     	     vote_percent(candidate)
 	     winner.append(int(Candidate.count(candidate)))
     
@@ -129,3 +132,5 @@ The second project, PyPoll, analysed polling data for a state election.  The pol
     		print("--------------------", file = f)
     		print(f"Winner: {Candidate_List[winner_index]}", file = f)
     		print("--------------------", file=f)
+### Final Output
+[Poll_Analysis](PyPoll/Analysis/Voting_Results.txt)
